@@ -233,6 +233,7 @@ const getImg = (name) => {
   justify-content: $justContent;
 }
 .body_card {
+  min-width: 1500px;
   @include flexStyle(center, space-around);
   * {
     font-family: inter-normal;

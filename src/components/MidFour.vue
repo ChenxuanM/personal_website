@@ -28,6 +28,7 @@ const getImageUrl = (name) => {
   justify-content: $justContent;
 }
 .mid_four {
+  min-width: 1500px;
   @include flexStyle(center, center);
   height: 88px;
   .rect {

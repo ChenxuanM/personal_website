@@ -252,6 +252,7 @@ connect, and how space can be taught to teach better."
 
 @mixin fast_desc() {
   .fast_desc {
+    min-width: 1500px;
     margin-top: 150px;
     @include flexStyle(center, space-around);
 
@@ -336,6 +337,7 @@ connect, and how space can be taught to teach better."
     flex-direction: column;
     justify-content: flex-end;
     width: 1000px;
+    min-width: 1000px;
     height: 304px;
     margin: 0 auto;
     margin-top: 41px;
