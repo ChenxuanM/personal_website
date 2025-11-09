@@ -16,21 +16,21 @@ const rectArr = ref([
         percent: 100,
         style: {
           marginBottom: '8px',
-        }
+        },
       },
       {
         text: 'Facade Design',
         percent: 100,
         style: {
           marginBottom: '6px',
-        }
+        },
       },
       {
         text: 'Floor plans / Layouts',
         percent: 100,
         style: {
           marginBottom: '11px',
-        }
+        },
       },
       {
         text: 'Consultant <br />Coordination',
@@ -38,14 +38,14 @@ const rectArr = ref([
         style: {
           marginBottom: '7px',
           height: '48px',
-        }
+        },
       },
       {
         text: 'Project Management',
         percent: 100,
         style: {
           marginBottom: '11px',
-        }
+        },
       },
       {
         text: '3D modeling',
@@ -56,7 +56,7 @@ const rectArr = ref([
       'WZMH Architects（2019 — Now）',
       'GALA China（2022.04 — 2022.09）',
       'BUZZ Architects（2017.04 — 2017.08）',
-    ]
+    ],
   },
   {
     topImg: 'c_moon2.png',
@@ -72,21 +72,21 @@ const rectArr = ref([
         percent: 80,
         style: {
           marginBottom: '8px',
-        }
+        },
       },
       {
         text: 'Storyboard',
         percent: 100,
         style: {
           marginBottom: '6px',
-        }
+        },
       },
       {
         text: 'Curriculum Design',
         percent: 100,
         style: {
           marginBottom: '11px',
-        }
+        },
       },
       {
         text: 'Multi-stakeholder <br />Coordination',
@@ -94,24 +94,21 @@ const rectArr = ref([
         style: {
           marginBottom: '7px',
           height: '48px',
-        }
+        },
       },
       {
         text: 'Design Workshops',
         percent: 100,
         style: {
           marginBottom: '11px',
-        }
+        },
       },
       {
         text: 'Feedback Systems',
         percent: 70,
       },
     ],
-    time_line: [
-      'Reel Arts（2019 — 2022）',
-      'Feiqu Education（2021.08 — 2021.11）',
-    ]
+    time_line: ['Reel Arts（2019 — 2022）', 'Feiqu Education（2021.08 — 2021.11）'],
   },
   {
     topImg: 'c_moon3.png',
@@ -127,21 +124,21 @@ const rectArr = ref([
         percent: 80,
         style: {
           marginBottom: '8px',
-        }
+        },
       },
       {
         text: 'Design-Based Research',
         percent: 100,
         style: {
           marginBottom: '6px',
-        }
+        },
       },
       {
         text: 'Thematic Coding',
         percent: 100,
         style: {
           marginBottom: '11px',
-        }
+        },
       },
       {
         text: 'Participatory Design <br />Co-design',
@@ -149,24 +146,21 @@ const rectArr = ref([
         style: {
           marginBottom: '7px',
           height: '48px',
-        }
+        },
       },
       {
         text: 'Study & Protocol Design',
         percent: 100,
         style: {
           marginBottom: '11px',
-        }
+        },
       },
       {
         text: 'Academic Writing (APA)',
         percent: 70,
       },
     ],
-    time_line: [
-      'IDEAL project (2022 — Now)',
-      'ISLS 2025 Poster ',
-    ]
+    time_line: ['IDEAL project (2022 — Now)', 'ISLS 2025 Poster '],
   },
 ])
 
@@ -179,18 +173,24 @@ const onReback = (row) => {
 
 const getImg = (name) => {
   return new URL(`/src/assets/card/${name}`, import.meta.url).href
-
 }
 </script>
 
 <template>
   <div class="body_card">
-    <div class="card_item" :key="index" v-for="(item, index) in rectArr">
+    <div
+      :class="{
+        isCipShow: item.clipShow,
+      }"
+      class="card_item"
+      :key="index"
+      v-for="(item, index) in rectArr"
+    >
       <template v-if="!item.clipShow">
-        <div class="top_img" :style="{backgroundImage: 'url(' + getImg(item.topImg) + ')'}"></div>
+        <div class="top_img" :style="{ backgroundImage: 'url(' + getImg(item.topImg) + ')' }"></div>
         <div class="top_text">{{ item.topText }}</div>
         <div class="circleText">{{ item.circleText }}</div>
-        <div class="mid_img" :style="{backgroundImage: 'url(' + getImg(item.midImg) + ')'}"></div>
+        <div class="mid_img" :style="{ backgroundImage: 'url(' + getImg(item.midImg) + ')' }"></div>
         <div class="child_list">
           <div class="child_item" :key="index" v-for="(it, index) in item.circleGroup">
             <div class="circleText">{{ it }}</div>
@@ -213,9 +213,7 @@ const getImg = (name) => {
           <div class="time_line">
             <div class="top">Timeline</div>
             <div class="time_line_list">
-              <div class="time_line_item"
-                   :key="index"
-                   v-for="(it, index) in item.time_line">
+              <div class="time_line_item" :key="index" v-for="(it, index) in item.time_line">
                 {{ it }}
               </div>
             </div>
@@ -254,6 +252,17 @@ const getImg = (name) => {
     width: 370px;
     height: 520px;
     position: relative;
+    // 鼠标经过 3d 卡片旋转
+    transition: all 0.5s;
+    transform: rotateY(0deg);
+    transform-origin: center;
+    &.isCipShow {
+      transform: rotateY(180deg);
+      .card_clip {
+        transform: rotateY(180deg);
+      }
+    }
+    transform-style: preserve-3d;
 
     &:before {
       position: absolute;
@@ -261,7 +270,7 @@ const getImg = (name) => {
       width: 100%;
       height: 100%;
       border-radius: 20px;
-      background-image: url("@/assets/bg/larkmap.png");
+      background-image: url('@/assets/bg/larkmap.png');
       background-size: 100%;
       background-repeat: no-repeat;
       z-index: -1;
