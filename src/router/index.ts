@@ -13,6 +13,7 @@ const router = createRouter({
       name: 'about',
       meta: {
         title: 'About',
+        class: 'yellow'
       },
       component: () => import('@/views/about/about.vue'),
     },
@@ -49,6 +50,18 @@ const router = createRouter({
       component: () => import('@/views/research/research.vue'),
     },
   ],
+})
+
+// 路由守卫
+router.beforeEach((to, from) => {
+  if (to.meta && to.meta.class) {
+    document.body.classList.add(to.meta.class)
+  } else {
+    document.body.classList.forEach(item => {
+      document.body.classList.remove(item)
+    })
+  }
+  return true
 })
 
 export default router

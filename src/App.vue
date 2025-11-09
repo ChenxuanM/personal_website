@@ -30,6 +30,10 @@ new WOW().init()
 }
 
 body {
-  background-color: rgba(30, 30, 30, 1);;
+  transition: all 1s;
+  background-color: rgba(30, 30, 30, 1);
+  &.yellow {
+    background-color: rgba(243, 243, 243, 1);
+  }
 }
 </style>

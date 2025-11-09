@@ -207,9 +207,11 @@ connect, and how space can be taught to teach better."
 
 @mixin main_moon_desc {
   .main_moon_desc {
+    //padding: 0 166px 10px 173px;
+    padding-right: 46px;
     margin-bottom: 110px;
     @include flexStyle(center);
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 
@@ -227,7 +229,7 @@ connect, and how space can be taught to teach better."
 }
 
 @mixin moon_desc {
-  margin-left: 103px;
+  //margin-left: 103px;
   width: 633px;
   @include flexStyle(center);
   flex-direction: column;
@@ -259,7 +261,9 @@ connect, and how space can be taught to teach better."
 
 @mixin fast_desc() {
   .fast_desc {
-    min-width: 1500px;
+    min-width: 1400px;
+    width: 1400px;
+    margin: 0 auto;
     margin-top: 150px;
     @include flexStyle(center, space-around);
 
@@ -315,14 +319,13 @@ connect, and how space can be taught to teach better."
   .blog_link {
     min-width: 1500px;
     margin-top: 83px;
-    margin-right: 92px;
+    margin-right: 82px;
     @include flexStyle();
     justify-content: flex-end;
     @include route_item();
   }
 
   .main_body {
-    padding: 0 166px 10px 173px;
     overflow: hidden;
 
     @include main_moon_desc();

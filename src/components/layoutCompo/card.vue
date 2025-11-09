@@ -61,10 +61,10 @@ const rectArr = ref([
   {
     topImg: 'c_moon2.png',
     topText: 'Architectural Designer',
-    circleText: '6+ years',
+    circleText: '3+ years',
     midImg: 'c_container2.png',
     clipShow: false,
-    circleGroup: ['design', 'visualization', 'coordination'],
+    circleGroup: ['course-pack', 'storyboard', 'mentoring'],
     controlBtnText: 'Click to flip',
     processBarArray: [
       {
@@ -113,10 +113,10 @@ const rectArr = ref([
   {
     topImg: 'c_moon3.png',
     topText: 'Architectural Designer',
-    circleText: '6+ years',
+    circleText: '2 years',
     midImg: 'c_container3.png',
     clipShow: false,
-    circleGroup: ['design', 'visualization', 'coordination'],
+    circleGroup: ['co-design', 'qualitative', 'methods'],
     controlBtnText: 'Click to flip',
     processBarArray: [
       {
@@ -231,7 +231,9 @@ const getImg = (name) => {
   justify-content: $justContent;
 }
 .body_card {
-  min-width: 1500px;
+  min-width: 1400px;
+  width: 1400px;
+  margin: 0 auto;
   @include flexStyle(center, space-around);
   * {
     font-family: inter-normal;
@@ -256,6 +258,8 @@ const getImg = (name) => {
     transition: all 0.5s;
     transform: rotateY(0deg);
     transform-origin: center;
+    border-radius: 20px;
+    box-shadow: 0px 9px 8px rgba(10, 10, 14, 0.72);
     &.isCipShow {
       transform: rotateY(180deg);
       .card_clip {
