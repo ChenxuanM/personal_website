@@ -73,12 +73,12 @@ const quickItem = ref([
 
   <main class="main_body">
     <div class="main_moon_desc">
-      <div class="moon_area">
+      <div class="moon_area wow slideInLeft" >
         <img src="@/assets/media/moon.gif" />
       </div>
       <div class="moon_desc">
-        <div class="t">My name is Chenxuan Meng</div>
-        <div class="b">
+        <div class="t wow slideInDown">My name is Chenxuan Meng</div>
+        <div class="b wow slideInRight">
           <div class="b_t">I am an Architectural Designer, a Learning
           </div>
           <div class="b_b">
@@ -89,21 +89,26 @@ const quickItem = ref([
     </div>
     <mid-four />
     <BigText
+      class="wow bounceInUp"
       style="margin-top: 160px"
       text="Two Sides of the Moon"
       :is-center="true"
     ></BigText>
     <ita-text
+      class="wow bounceInUp"
       text="Three Roles Bridges Architectural Spaces to Designing Learning Environments."
       :is-center="true"
     ></ita-text>
 
-    <Card style="margin-top: 33px; margin-bottom: 125px"/>
+    <Card
+      class="wow bounceInUp"
+      data-wow-delay=".5s"
+      style="margin-top: 33px; margin-bottom: 125px"/>
 
     <mid-four />
 
     <section class="fast_desc">
-      <div class="left">
+      <div class="left wow slideInLeft">
         <div class="block">
           <BigText text="Two Sides, One Vision"></BigText>
           <ita-text
@@ -153,7 +158,7 @@ connect, and how space can be taught to teach better."
           </div>
         </div>
       </div>
-      <div class="right">
+      <div class="right wow slideInRight" >
         <div class="title">Quick Links</div>
         <quick-link-item
           :key="index"

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import WOW from 'wow.js'
+import 'wow.js/css/libs/animate.css'
+new WOW().init()
 </script>
 
 <template>
