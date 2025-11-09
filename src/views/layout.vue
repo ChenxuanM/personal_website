@@ -16,7 +16,9 @@ const routeArr = computed(() => {
 const curYear = computed(() => {
   return new Date().getFullYear()
 })
-
+const getImg = (name) => {
+  return new URL(`/src/assets/media/${name}`, import.meta.url).href
+}
 const linkMe = ref([
   {
     text: 'Link me',
@@ -74,7 +76,7 @@ const quickItem = ref([
   <main class="main_body">
     <div class="main_moon_desc">
       <div class="moon_area wow slideInLeft" >
-        <img src="@/assets/media/moon.gif" />
+        <img :src="getImg('moon.gif')" />
       </div>
       <div class="moon_desc">
         <div class="t wow slideInDown">My name is Chenxuan Meng</div>
