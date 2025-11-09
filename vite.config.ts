@@ -16,6 +16,10 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
   ],
+  // 输出路径
+  build: {
+    outDir: 'arcdesign',
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
