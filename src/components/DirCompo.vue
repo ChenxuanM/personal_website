@@ -8,6 +8,7 @@ const routeName = route.meta.title
 defineProps({
   fileName: String,
   assetsPath: String,
+  hoverClass: String,
 })
 
 const onRouteJumpHome = () => {
@@ -16,7 +17,11 @@ const onRouteJumpHome = () => {
 </script>
 
 <template>
-<div class="dir_compo wow fadeIn">
+<div class="dir_compo wow fadeIn" style="
+    --hover-color: rgb(30, 30, 30);
+    --gang-color: rgb(138, 138, 138);
+    "
+>
   <div class="top_dir">
     <img :src="getImg(assetsPath, fileName)" alt="">
     <div class="dir_list">
@@ -52,12 +57,13 @@ const onRouteJumpHome = () => {
         transition: all .3s linear;
         cursor: pointer;
         &:hover, &.active {
-          color: rgb(30, 30, 30);
+          color: var(--hover-color);
         }
       }
 
       .r_g {
         margin: 0 4px;
+        color: var(--gang-color);
       }
     }
   }

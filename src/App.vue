@@ -35,5 +35,8 @@ body {
   &.yellow {
     background-color: rgba(243, 243, 243, 1);
   }
+  &.dark-15 {
+    background-color: rgb(15, 15, 15);
+  }
 }
 </style>

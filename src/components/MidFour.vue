@@ -9,11 +9,20 @@ const pngs = [
 const getImageUrl = (name) => {
   return new URL(`/src/assets/four/${name}.png`, import.meta.url).href
 }
+
+defineProps({
+  isReverse: Boolean,
+})
 </script>
 
 <template>
-  <div class="mid_four">
+  <div class="mid_four"
+       :class="{
+            isReverse,
+         }"
+  >
     <div class="rect"
+
          :key="index"
          v-for="(item, index) in pngs">
       <img :src="getImageUrl(item)" alt="">
@@ -31,6 +40,9 @@ const getImageUrl = (name) => {
   min-width: 1500px;
   @include flexStyle(center, center);
   height: 88px;
+  &.isReverse {
+    flex-direction: row-reverse;
+  }
   .rect {
     --size: 26px;
     width: var(--size);

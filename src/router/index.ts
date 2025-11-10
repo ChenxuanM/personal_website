@@ -46,6 +46,7 @@ const router = createRouter({
       name: 'research',
       meta: {
         title: 'Research',
+        class: 'dark-15'
       },
       component: () => import('@/views/research/research.vue'),
     },
