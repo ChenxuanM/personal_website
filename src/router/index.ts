@@ -22,8 +22,18 @@ const router = createRouter({
       name: 'work',
       meta: {
         title: 'Work',
+        class: 'dark-15'
       },
       component: () => import('@/views/work/work.vue'),
+    },
+    {
+      path: '/work/Institutional',
+      name: 'work-Institutional',
+      meta: {
+        title: 'Institutional',
+        class: 'yellow',
+      },
+      component: () => import('@/views/work/Institutional/index.vue'),
     },
     {
       path: '/contact',
@@ -55,12 +65,11 @@ const router = createRouter({
 
 // 路由守卫
 router.beforeEach((to, from) => {
+  document.body.classList.forEach(item => {
+    document.body.classList.remove(item)
+  })
   if (to.meta && to.meta.class) {
     document.body.classList.add(to.meta.class)
-  } else {
-    document.body.classList.forEach(item => {
-      document.body.classList.remove(item)
-    })
   }
   return true
 })
