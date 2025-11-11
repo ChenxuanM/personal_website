@@ -54,7 +54,7 @@ const RepresentativeDataStruct = ref([
     text: 'AI Workflow',
     shadowText: 'Personal exploration',
     btnText: 'View Details',
-    toPath: '/work/Others',
+    toPath: '/work/AI',
   },
 ])
 

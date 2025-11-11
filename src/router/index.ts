@@ -32,6 +32,8 @@ const router = createRouter({
       meta: {
         title: 'Institutional',
         class: 'yellow',
+        noMenu: true,
+
       },
       component: () => import('@/views/work/Institutional/index.vue'),
     },
@@ -41,6 +43,8 @@ const router = createRouter({
       meta: {
         title: 'Residential',
         class: 'yellow',
+        noMenu: true,
+
       },
       component: () => import('@/views/work/Residential/index.vue'),
     },
@@ -50,16 +54,20 @@ const router = createRouter({
       meta: {
         title: 'Others',
         class: 'yellow',
+        noMenu: true,
+
       },
       component: () => import('@/views/work/Others/index.vue'),
     },
     {
-      path: '/contact',
-      name: 'contact',
+      path: '/work/AI',
+      name: 'work-AI',
       meta: {
-        title: 'Contact',
+        title: 'AI in Architecture',
+        class: 'yellow',
+        noMenu: true,
       },
-      component: () => import('@/views/contact/contact.vue'),
+      component: () => import('@/views/work/AI/AI.vue'),
     },
     {
       path: '/learning',
@@ -78,6 +86,15 @@ const router = createRouter({
       },
       component: () => import('@/views/research/research.vue'),
     },
+    {
+      path: '/contact',
+      name: 'contact',
+      meta: {
+        title: 'Contact',
+      },
+      component: () => import('@/views/contact/contact.vue'),
+    },
+
   ],
 })
 

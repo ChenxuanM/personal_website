@@ -10,7 +10,8 @@ const router = useRouter()
 const routes = router.options.routes
 
 const routeArr = computed(() => {
-  return routes.slice(1, routes.length)
+  let rots = routes.filter(item => item.meta && !item.meta.noMenu)
+  return rots.slice(0, rots.length)
 })
 
 const curYear = computed(() => {
