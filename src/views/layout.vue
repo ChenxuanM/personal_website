@@ -197,8 +197,8 @@ connect, and how space can be taught to teach better."
 
 @mixin route_item() {
   .route_item {
-    width: 108px;
-    margin-right: 39px;
+    width: fit-content;
+    margin-right: 40px;
     &:last-child {
       margin-right: 0;
     }
@@ -255,7 +255,7 @@ connect, and how space can be taught to teach better."
     font-style: italic;
     font-weight: 200;
     font-size: 24px;
-    color: #fff;
+    color: rgb(189, 189, 189);
     text-align: center;
     font-family: inter-ita;
   }
@@ -325,7 +325,7 @@ connect, and how space can be taught to teach better."
   .blog_link {
     min-width: 1500px;
     margin-top: 83px;
-    margin-right: 82px;
+    margin-right: 180px;
     @include flexStyle();
     justify-content: flex-end;
     @include route_item();
