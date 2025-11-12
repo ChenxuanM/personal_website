@@ -4,7 +4,6 @@ import BigText from '@/components/BigText.vue'
 import FlowItem from '@/components/FlowItem.vue'
 
 import { getImg } from '@/utils/getImg.ts'
-import ItaText from '@/components/ItaText.vue'
 import MidFour from '@/components/MidFour.vue'
 import IconPlay from '@/components/iconCompo/iconPlay.vue'
 
@@ -260,7 +259,7 @@ const botmDivData = ref([
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-image: url('../../assets/research/res_bg.png');
+    background-image: url('../../assets/learning/learnBg.png');
     z-index: -1;
   }
 
@@ -275,6 +274,10 @@ const botmDivData = ref([
 
         .flow_item {
           padding-bottom: 72px;
+
+          &:last-child {
+            padding-bottom: unset;
+          }
 
           &:before {
             top: 0px;
@@ -366,7 +369,7 @@ const botmDivData = ref([
   }
 
   .mainTitle {
-    margin-top: 120px;
+    margin-top: 190px;
     margin-bottom: 16px;
     width: 100%;
     justify-content: center;

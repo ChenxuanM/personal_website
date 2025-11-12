@@ -120,7 +120,7 @@ const onSendEmail = () => {
       ></ita-text>
 
       <BigText
-        style="margin-top: 14px;"
+        style="margin-top: 24px;"
         class="usual_title"
         :text="'Architectural Practice'.toUpperCase()"
       ></BigText>
@@ -132,7 +132,7 @@ const onSendEmail = () => {
       ></ita-text>
 
       <BigText
-        style="margin-top: 14px;"
+        style="margin-top: 24px;"
         class="usual_title"
         :text="'Learning Design & Mentorship'.toUpperCase()"
       ></BigText>
@@ -180,7 +180,7 @@ const onSendEmail = () => {
 
   .about_profile {
     margin-top: 86px;
-    @include flexStyle(center, space-around);
+    @include flexStyle(unset);
     .imgWrap {
       margin-right: 94px;
       .btns {
@@ -225,7 +225,7 @@ const onSendEmail = () => {
       .tilte {
         color: rgb(26, 26, 26);
         font-size: 36px;
-        margin-bottom: 11px;
+        margin-bottom: 12px;
         font-weight: 400;
       }
 
@@ -239,13 +239,15 @@ const onSendEmail = () => {
         color: rgba(112, 112, 112, 1);
         font-weight: 400;
         font-size: 16px;
+        height: unset;
+        margin-bottom: 26px;
       }
 
       .usual_title {
         font-size: 12px;
         font-weight: 400;
         color: rgb(153, 161, 175);
-        margin-bottom: 14px;
+        margin-bottom: 6px;
         letter-spacing: 2px;
       }
 
@@ -253,7 +255,7 @@ const onSendEmail = () => {
         color: rgb(30, 41, 57);
         font-weight: 400;
         line-height: 26px;
-        margin-bottom: 14px;
+        margin-bottom: 24px;
       }
 
       .usual_p {
@@ -265,8 +267,9 @@ const onSendEmail = () => {
       }
 
       .desc_wrap {
+        height: 100px;
         padding-top: 20px;
-        margin-top: 17px;
+        margin-top: 38px;
         background-color: rgb(243, 244, 246);
         border-left: 3px solid rgb(74, 85, 101);
         padding-left: 27px;

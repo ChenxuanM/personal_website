@@ -1,5 +1,7 @@
 <script setup lang="ts">
-defineProps({
+import { useRouter} from 'vue-router'
+const router = useRouter()
+const props = defineProps({
   text: String,
   link_item: {
     type: Array,
@@ -8,8 +10,13 @@ defineProps({
   isHasBorder: {
     type: Boolean,
     default: true
-  }
+  },
+  toRoute: String
 })
+
+const onClickJumpRoute = () => {
+  router.push(props.toRoute)
+}
 </script>
 
 <template>
@@ -18,7 +25,7 @@ defineProps({
           isHasBorder
          }"
 >
-  <div class="top">{{ text }}</div>
+  <div @click="onClickJumpRoute"  class="top">{{ text }}</div>
   <div class="bottom">
     <div :key="index" class="sm_item" v-for="(item, index) in link_item">
       <div>{{ item }}</div>
@@ -53,6 +60,7 @@ defineProps({
     font-size: 15px;
     margin-bottom: 11px;
     font-weight: 700;
+    cursor: pointer;
   }
   .bottom {
     @include flexStyle(center);

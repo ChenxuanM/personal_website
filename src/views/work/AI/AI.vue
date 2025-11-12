@@ -2,6 +2,7 @@
 import DirCompo from '@/components/DirCompo.vue'
 import BigText from '@/components/BigText.vue'
 import ItaText from '@/components/ItaText.vue'
+import { getImg } from '@/utils/getImg.ts'
 
 const BtnList = ref([
   {
@@ -26,22 +27,22 @@ const BtnList = ref([
 
 const botmList = ref([
   {
-    img: '',
+    img: getImg('work', 'base.png'),
     title: 'Step 1: Base Massing',
     text: 'Simple architectural model with basic geometry and proportions',
   },
   {
-    img: '',
+    img: getImg('work', 'midjourney.png'),
     title: 'Step 2: Midjourney',
     text: 'Conceptual exploration testing material palettes and atmosphere',
   },
   {
-    img: '',
+    img: getImg('work', 'prome_AI.png'),
     title: 'Step 3: Prome AI',
     text: 'Massing accuracy enhanced with reference image control',
   },
   {
-    img: '',
+    img: getImg('work', 'nano_banana.png'),
     title: 'Step 4: Nano Banana',
     text: 'Final refinement achieving photorealistic quality',
   },
@@ -156,7 +157,7 @@ const botmList = ref([
             :key="index"
             v-for="(item, index) in botmList"
           >
-            <img src="" alt="" />
+            <img :src="item.img" :alt="item.title" />
 
             <big-text class="stepTitle" :text="item.title" />
 

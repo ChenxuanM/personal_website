@@ -29,6 +29,7 @@ const linkMe = ref([
 const quickItem = ref([
   {
     text: 'Work / Architecture',
+    toRoute: '/work',
     link_item: [
       'Institutional',
       'Residential',
@@ -38,6 +39,7 @@ const quickItem = ref([
   },
   {
     text: 'Learning & Mentorship',
+    toRoute: '/learning',
     link_item: [
       'Course Demo  ',
       'Workshops',
@@ -46,12 +48,14 @@ const quickItem = ref([
   },
   {
     text: 'IDEAL Project',
+    toRoute: '/research',
     link_item: [
       'AI-assisted storyboard for active learning',
     ],
   },
   {
     text: 'Notes & Papers',
+    toRoute: '/research',
     link_item: [
       'ISLS 2025 poster',
       'Methods',
@@ -76,12 +80,12 @@ const quickItem = ref([
 
   <main class="main_body">
     <div class="main_moon_desc">
-      <div class="moon_area wow slideInLeft" >
+      <div class="moon_area wow fadeIn" >
         <img :src="getImg('moon.gif')" />
       </div>
       <div class="moon_desc">
-        <div class="t wow slideInDown">My name is Chenxuan Meng</div>
-        <div class="b wow slideInRight">
+        <div class="t wow fadeIn">My name is Chenxuan Meng</div>
+        <div class="b wow fadeIn">
           <div class="b_t">I am an Architectural Designer, a Learning
           </div>
           <div class="b_b">
@@ -92,19 +96,19 @@ const quickItem = ref([
     </div>
     <mid-four />
     <BigText
-      class="wow bounceInUp"
+      class="wow fadeIn"
       style="margin-top: 160px"
       text="Two Sides of the Moon"
       :is-center="true"
     ></BigText>
     <ita-text
-      class="wow bounceInUp"
+      class="wow fadeIn"
       text="Three Roles Bridges Architectural Spaces to Designing Learning Environments."
       :is-center="true"
     ></ita-text>
 
     <Card
-      class="wow bounceInUp"
+      class="wow fadeIn"
       data-wow-delay=".5s"
       style="margin-top: 33px; margin-bottom: 125px"/>
 
@@ -168,6 +172,7 @@ connect, and how space can be taught to teach better."
           v-bind="item"
           v-for="(item, index) in quickItem"
           :text="item.text"
+          :toRoute="item.toRoute"
           :link_item="item.link_item"
         />
       </div>
@@ -217,14 +222,14 @@ connect, and how space can be taught to teach better."
 }
 
 @mixin moon_area {
-  width: 850px;
-  height: 898px;
+  width: 780px;
+  height: 780px;
   min-width: 871px;
   overflow: hidden;
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
     display: block;
   }
 }
