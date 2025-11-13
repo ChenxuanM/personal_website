@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior() {
+    // 总是滚动到顶部
+    return { top: 0 };
+  },
   routes: [
     {
       path: '/',
