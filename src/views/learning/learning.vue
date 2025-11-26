@@ -40,7 +40,7 @@ const fourBlock = ref([
   },
 
   {
-    tit: 'Problem Finding',
+    tit: 'Reading Cities',
     tagList: ['Grades 6-9', 'Spatial Literacy', 'Video course'],
     ct1: 'Core Philosophy',
     ct1Content: 'Through hands-on urban model making, students understand the components of urban space—architecture, landscape, street networks, paving—and how they collectively shape our living environment.',
